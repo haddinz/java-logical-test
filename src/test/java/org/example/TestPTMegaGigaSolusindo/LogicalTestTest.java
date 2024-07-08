@@ -58,9 +58,11 @@ class LogicalTestTest {
 
     @Test
     void testGetNilaiSaham() {
+        int expected = 7;
         int[] numArr = new int[]{7,18,27,10,29};
         int result = logicalTest.getNilaiSaham(numArr);
 
+        assertEquals(expected, result);
         assertNotNull(result);
     }
 
