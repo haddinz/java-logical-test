@@ -69,13 +69,20 @@ public class LogicalTest {
     public int getNilaiSaham(int[] numbers) {
         int minValue = numbers[0];
         int maxValue = 0;
+        int selisih = 11;
 
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] <= minValue) {
                 minValue = numbers[i];
             } else {
                 maxValue = numbers[i];
-                break;
+                int tempSelisih = maxValue - minValue;
+                if (tempSelisih > selisih) {
+                    selisih = tempSelisih;
+                } else {
+                    maxValue = numbers[i];
+                    break;
+                }
             }
         }
         String result = "Pembelian terbaik dengan harga = " + minValue + " ,sebelum kenaikan dengan harga = " + maxValue;
