@@ -160,4 +160,21 @@ public class SevenKyuService {
 //        System.out.println("hasilnya ialah true");
 //        return true;
     }
+
+    //get missing element int
+    public int getMissingInt(int[] number) {
+        int missingInt = 0;
+        int[] numberSort = Arrays.stream(number).sorted().toArray();
+
+        for (int i = 0; i < number.length; i++) {
+            if (numberSort[i] != i) {
+                missingInt = i;
+                break;
+            }
+        }
+
+        System.out.println(Arrays.toString(numberSort));
+        System.out.println("missing value is = " + missingInt);
+        return missingInt;
+    }
 }

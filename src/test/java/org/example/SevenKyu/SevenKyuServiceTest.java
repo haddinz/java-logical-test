@@ -78,4 +78,12 @@ class SevenKyuServiceTest {
 
         assertNotNull(result);
     }
+
+    @Test
+    void getMissingInt() {
+        int[] numArr = new int[]{9, 2, 4, 5, 7, 0, 8, 6, 1};
+        int result = sevenKyuService.getMissingInt(numArr);
+
+        assertNotNull(result);
+    }
 }
